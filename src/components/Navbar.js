@@ -1,24 +1,14 @@
-import logo from "../utils/icons/Framehyperswitch.svg";
+import logo from "../utils/icons/bestby.svg";
 
 function Navbar() {
   return (
     <div className="Navbar">
       <a className="img" href="/">
-        <img src={logo} alt="" width="200" />
+        <img src={logo} alt="" width="100" />
       </a>
-      <div className="MenuItems">
-        <a className="Menulink" href="https://hyperswitch.io/">
-          Product
-        </a>
-        <a className="Menulink" href="https://hyperswitch.io/docs">
-          Developer Hub
-        </a>
-      </div>
-      <div className="GetEarlyAccess">
-        <a className="earlyAccess" href="https://app.hyperswitch.io/">
-          Sign Up for Hyperswitch
-        </a>
-      </div>
+      <a className="earlyAccess" href="https://www.bestbuy.com/">
+        Return To Cart
+      </a>
     </div>
   );
 }

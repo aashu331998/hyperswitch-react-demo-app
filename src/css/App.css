@@ -28,32 +28,15 @@ form > * {
 }
 
 button {
-  background-color: var(--accent-color);
+  background-color: #006df9;
   width: 100%;
-}
-
-button {
-  background: #006df9;
-  border-radius: var(--radius);
+  border-radius: 3px;
   color: white;
   border: 0;
   padding: 12px 16px;
   margin-top: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
-  display: block;
-}
-button:hover {
-  filter: contrast(115%);
-}
-button:active {
-  transform: translateY(0px) scale(0.98);
-  filter: brightness(0.9);
-}
-button:disabled {
-  opacity: 0.5;
-  cursor: none;
 }
 
 input,
@@ -81,15 +64,6 @@ fieldset,
 input,
 select {
   border: 1px solid #efefef;
-}
-
-#payment-form {
-  border: #f6f9fc solid 1px;
-  border-radius: var(--radius);
-  padding: 20px;
-  margin: 0px 0px 0px 0px;
-  box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%),
-    0 30px 60px -30px rgb(0 0 0 / 30%);
 }
 
 #messages {
@@ -148,34 +122,6 @@ form > * {
   margin: 10px 0;
 }
 
-button {
-  background-color: var(--accent-color);
-}
-
-button {
-  background: var(--accent-color);
-  border-radius: var(--radius);
-  color: white;
-  border: 0;
-  padding: 12px 16px;
-  margin-top: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: block;
-}
-button:hover {
-  filter: contrast(115%);
-}
-button:active {
-  transform: translateY(0px) scale(0.98);
-  filter: brightness(0.9);
-}
-button:disabled {
-  opacity: 0.5;
-  cursor: none;
-}
-
 input,
 select {
   display: block;
@@ -203,15 +149,6 @@ select {
   border: 1px solid #efefef;
 }
 
-#payment-form {
-  border: #f6f9fc solid 1px;
-  border-radius: var(--radius);
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%),
-    0 30px 60px -30px rgb(0 0 0 / 30%);
-}
-
 #messages {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
   display: none; /* hide initially, then show once the first message arrives */
@@ -227,18 +164,17 @@ select {
   height: 7vh;
   display: flex;
   align-items: center;
-  background: #ffffff;
-  justify-content: center;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.07);
+  background: #0046be;
+  justify-content: space-between;
+  padding-left: 180px;
+  padding-right: 180px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 1.17);
 }
 
 .img {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  float: left;
 }
 .Item {
   display: flex;
@@ -266,7 +202,12 @@ select {
   padding: 8px;
 }
 .itemImg {
-  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 220px;
+  height: 100px;
 }
 .name {
   display: flex;
@@ -417,12 +358,7 @@ select {
   -webkit-animation: loading 2s infinite ease 1.5s;
   animation: loading 2s infinite ease 1.5s;
 }
-#payment-message {
-  font-size: 16px;
-  font-weight: 400;
-  padding: 2%;
-  color: #ff0000;
-}
+
 .spinner:after {
   width: 10.4px;
   height: 10.2px;
@@ -449,18 +385,9 @@ select {
 }
 
 .total {
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 800;
+  font-size: 19px;
   color: #000000;
-  opacity: 0.9;
-}
-
-.buttonSection {
-  padding: 3%;
-  margin-right: 3%;
-  width: 70%;
-  justify-content: flex-end;
-  display: flex;
 }
 
 .orderSummary {
@@ -479,10 +406,6 @@ select {
 .elements {
   display: flex;
   flex-direction: column;
-  width: 100%;
-}
-#payment-form {
-  max-width: 560px;
   width: 100%;
 }
 .cartItems {
@@ -634,7 +557,7 @@ select {
 }
 
 .earlyAccess {
-  color: #006df9;
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
 }
@@ -719,10 +642,6 @@ select {
   .checkoutSection {
     flex-direction: column-reverse;
     width: 100%;
-  }
-  .buttonSection {
-    width: 100%;
-    justify-content: center;
   }
   .description {
     width: 100%;
