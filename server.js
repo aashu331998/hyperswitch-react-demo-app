@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 // replace the test api key with your hyperswitch api key
 const hyper = require("@juspay-tech/hyperswitch-node")(
-  process.env.HYPERSWITCH_SECRET_KEY
+  "HYPERSWITCH_SECRET_KEY"
 );
 
 app.get("/config", (req, res) => {
