@@ -1,20 +1,19 @@
-import "./App.css";
-import Payment from "./Payment";
-import Completion from "./Completion";
+import MyCart from "./MyCart";
+import Completion from "./components/Completion";
+import Navbar from "./components/Navbar";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <main>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Payment />} />
-          <Route path="/completion" element={<Completion />} />
-        </Routes>
-      </BrowserRouter>
-    </main>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<MyCart />} />
+        <Route path="/completion" element={<Completion />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

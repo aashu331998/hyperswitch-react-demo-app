@@ -21,7 +21,7 @@ app.get("/config", (req, res) => {
   });
 });
 
-app.post("/create-payment-intent", async (req, res) => {
+app.post("/create-payment", async (req, res) => {
   try {
     const paymentIntent = await hyper.paymentIntents.create({
       currency: "USD",
