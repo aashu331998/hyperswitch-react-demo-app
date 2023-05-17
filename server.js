@@ -4,9 +4,9 @@ const { resolve } = require("path");
 
 // Replace if using a different env file or config
 const env = require("dotenv").config({ path: "./.env" });
-app.use(express.static(process.env.STATIC_DIR));
+app.use(express.static("./public"));
 app.get("/", (req, res) => {
-  const path = resolve(process.env.STATIC_DIR + "/index.html");
+  const path = resolve("./public" + "/index.html");
   res.sendFile(path);
 });
 
@@ -14,12 +14,6 @@ app.get("/", (req, res) => {
 const hyper = require("@juspay-tech/hyperswitch-node")(
   "HYPERSWITCH_SECRET_KEY"
 );
-
-app.get("/config", (req, res) => {
-  res.send({
-    publishableKey: process.env.HYPERSWITCH_PUBLISHABLE_KEY,
-  });
-});
 
 app.post("/create-payment", async (req, res) => {
   try {
