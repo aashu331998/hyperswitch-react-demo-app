@@ -19,8 +19,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
-    "start-client": "PORT=4242 react-scripts start",
+    "start": "PORT=4242 react-scripts start",
     "start-server": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
