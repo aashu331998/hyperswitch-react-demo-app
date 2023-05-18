@@ -5,17 +5,17 @@ import search from "../utils/icons/Vector-1.svg";
 function Navbar() {
   return (
     <div className="Navbar">
-      <a className="img" href="/">
+      <div className="img" href="/">
         <img src={logo} alt="" width="150" />
-      </a>
-      <a>
-        <a className="img" href="/" style={{ marginRight: 20 }}>
+      </div>
+      <div style={{ display: "flex" }}>
+        <div className="img" href="/" style={{ marginRight: 20 }}>
           <img src={search} alt="" width="30" />
-        </a>
-        <a className="img" href="/">
+        </div>
+        <div className="img" href="/">
           <img src={cart} alt="" width="30" />
-        </a>
-      </a>
+        </div>
+      </div>
     </div>
   );
 }

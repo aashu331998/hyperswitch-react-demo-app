@@ -11,16 +11,13 @@ app.get("/", (req, res) => {
 });
 
 // replace the test api key with your hyperswitch api key
-const hyper = require("@juspay-tech/hyperswitch-node")(
-  "snd_9d552d20e1f0411e8c9c45193cdc0677"
-);
+const hyper = require("stripe")("sk_test_tR3PYbcVNZZ796tH88S4VQ2u");
 
 app.post("/create-payment", async (req, res) => {
   try {
     const paymentIntent = await hyper.paymentIntents.create({
       currency: "USD",
       amount: 369999,
-      authentication_type: "no_three_ds",
     });
 
     // Send publishable key and PaymentIntent details to client

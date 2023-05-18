@@ -6,6 +6,8 @@
     "@juspay-tech/hyper-js": "^1.1.0",
     "@juspay-tech/hyperswitch-node": "^1.0.1",
     "@juspay-tech/react-hyper-js": "^1.0.1",
+    "@stripe/react-stripe-js": "^2.1.0",
+    "@stripe/stripe-js": "^1.53.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^14.4.2",
@@ -16,6 +18,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "stripe": "^12.5.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

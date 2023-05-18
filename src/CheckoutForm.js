@@ -1,6 +1,9 @@
-import { UnifiedCheckout } from "@juspay-tech/react-hyper-js";
 import { useState } from "react";
-import { useHyper, useElements } from "@juspay-tech/react-hyper-js";
+import {
+  useStripe,
+  useElements,
+  PaymentElement,
+} from "@stripe/react-stripe-js";
 
 const PayButton = ({ disabled, isProcessing }) => {
   return (
@@ -19,7 +22,7 @@ const PayButton = ({ disabled, isProcessing }) => {
   );
 };
 const CheckoutForm = ({ return_url, background }) => {
-  const hyper = useHyper();
+  const hyper = useStripe();
   const widgets = useElements();
 
   const [message, setMessage] = useState(null);
@@ -65,7 +68,7 @@ const CheckoutForm = ({ return_url, background }) => {
       }}
       onSubmit={handleSubmit}
     >
-      <UnifiedCheckout id="unified-checkout" options={unifiedCheckoutOptions} />
+      <PaymentElement id="unified-checkout" options={unifiedCheckoutOptions} />
       <PayButton
         disabled={isLoading || !hyper || !widgets}
         isProcessing={isLoading}

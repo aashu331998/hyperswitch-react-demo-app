@@ -2,11 +2,11 @@ import Cart from "./CartItems";
 
 const CartContainer = ({ children }) => {
   return (
-    <div class="root-common root-payment-div">
-      <div class="root-common root-cart-div">
+    <div className="root-common root-payment-div">
+      <div className="root-common root-cart-div">
         <Cart />
       </div>
-      <div class="root-common root-sdk-div">
+      <div className="root-common root-sdk-div">
         <div style={{ width: 100 }}></div>
         {children}
       </div>
