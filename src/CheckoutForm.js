@@ -55,7 +55,7 @@ const CheckoutForm = ({ return_url, background }) => {
     <form
       style={{
         border: "#f6f9fc solid 0px",
-        background: { background },
+        background: background,
         borderRadius: "8px",
         padding: "50px",
         margin: "20px 0",
