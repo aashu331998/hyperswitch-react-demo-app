@@ -19,7 +19,7 @@ app.post("/create-payment", async (req, res) => {
   try {
     const paymentIntent = await hyper.paymentIntents.create({
       currency: "USD",
-      amount: 2999,
+      amount: 369999,
       authentication_type: "no_three_ds",
     });
 

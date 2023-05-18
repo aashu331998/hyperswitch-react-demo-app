@@ -7,7 +7,7 @@ const CartContainer = ({ children }) => {
         <Cart />
       </div>
       <div class="root-common root-sdk-div">
-        <div style={{ width: 180 }}></div>
+        <div style={{ width: 100 }}></div>
         {children}
       </div>
     </div>

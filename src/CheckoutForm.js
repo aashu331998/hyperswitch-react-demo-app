@@ -4,12 +4,21 @@ import { useHyper, useElements } from "@juspay-tech/react-hyper-js";
 
 const PayButton = ({ disabled, isProcessing }) => {
   return (
-    <button disabled={disabled} id="submit">
-      <span>{isProcessing ? "Processing ... " : "Pay now"}</span>
+    <button
+      disabled={disabled}
+      id="submit"
+      style={{
+        marginTop: 40,
+        fontSize: 16,
+        fontWeight: 200,
+        letterSpacing: 0.9,
+      }}
+    >
+      <span>{isProcessing ? "Processing ... " : "Pay $3699.99"}</span>
     </button>
   );
 };
-const CheckoutForm = ({ return_url }) => {
+const CheckoutForm = ({ return_url, background }) => {
   const hyper = useHyper();
   const widgets = useElements();
 
@@ -45,9 +54,10 @@ const CheckoutForm = ({ return_url }) => {
   return (
     <form
       style={{
-        border: "#f6f9fc solid 1px",
-        borderRadius: "3px",
-        padding: "20px",
+        border: "#f6f9fc solid 0px",
+        background: { background },
+        borderRadius: "8px",
+        padding: "50px",
         margin: "20px 0",
         maxWidth: "560px",
         width: "100%",

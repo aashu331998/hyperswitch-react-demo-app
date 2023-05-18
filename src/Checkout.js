@@ -25,7 +25,10 @@ const Checkout = () => {
       <>
         {clientSecret && (
           <HyperElements options={{ clientSecret }} hyper={hyperPromise}>
-            <CheckoutForm return_url={`${window.location.origin}/completion`} />
+            <CheckoutForm
+              return_url={`${window.location.origin}/completion`}
+              background={"#13151B"}
+            />
           </HyperElements>
         )}
       </>

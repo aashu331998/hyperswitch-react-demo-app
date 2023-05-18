@@ -6,14 +6,16 @@ body {
   display: flex;
   justify-content: center;
   font-size: 1.2em;
-  color: var(--dark-terminal-color);
+  color: #f0eded;
+  background-color: #000000;
 }
 
 .Navbar {
   height: 7vh;
   display: flex;
   align-items: center;
-  background: #0046be;
+
+  background: #13151b;
   justify-content: space-between;
   padding-left: 180px;
   padding-right: 180px;
@@ -21,7 +23,7 @@ body {
 }
 
 button {
-  background-color: #006df9;
+  background-color: #bb3f59;
   width: 100%;
   border-radius: 3px;
   color: white;
