@@ -21,6 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "script": "node HsScript.js",
     "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
     "start-client": "PORT=4242 react-scripts start",
     "start-server": "node server.js",
