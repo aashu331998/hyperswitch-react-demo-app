@@ -69,6 +69,12 @@ app.post("/create-payment", async (req, res) => {
           country_code: "+91",
         },
       },
+      metadata: {
+        order_details: {
+          product_name: "Apple iphone 15",
+          quantity: 1,
+        },
+      },
     });
 
     // Send publishable key and PaymentIntent details to client
