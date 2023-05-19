@@ -30,6 +30,45 @@ app.post("/create-payment", async (req, res) => {
     const paymentIntent = await stripe.paymentIntents.create({
       currency: "USD",
       amount: 369999,
+      confirm: false,
+      capture_method: "automatic",
+      authentication_type: "no_three_ds",
+      customer_id: "StripeCustomer",
+      description: "Hello this is description",
+      shipping: {
+        address: {
+          line1: "1467",
+          line2: "Harrison Street",
+          line3: "Harrison Street",
+          city: "San Fransico",
+          state: "California",
+          zip: "94122",
+          country: "US",
+          first_name: "joseph",
+          last_name: "Doe",
+        },
+        phone: {
+          number: "8056594427",
+          country_code: "+91",
+        },
+      },
+      billing: {
+        address: {
+          line1: "1467",
+          line2: "Harrison Street",
+          line3: "Harrison Street",
+          city: "San Fransico",
+          state: "California",
+          zip: "94122",
+          country: "US",
+          first_name: "joseph",
+          last_name: "Doe",
+        },
+        phone: {
+          number: "8056594427",
+          country_code: "+91",
+        },
+      },
     });
 
     // Send publishable key and PaymentIntent details to client
@@ -37,11 +76,23 @@ app.post("/create-payment", async (req, res) => {
       clientSecret: paymentIntent.client_secret,
     });
   } catch (err) {
-    return res.status(400).send({
-      error: {
-        message: err.message,
-      },
-    });
+    try {
+      const paymentIntent = await stripe.paymentIntents.create({
+        currency: "USD",
+        amount: 369999,
+      });
+
+      // Send publishable key and PaymentIntent details to client
+      res.send({
+        clientSecret: paymentIntent.client_secret,
+      });
+    } catch (err) {
+      return res.status(400).send({
+        error: {
+          message: err.message,
+        },
+      });
+    }
   }
 });
 

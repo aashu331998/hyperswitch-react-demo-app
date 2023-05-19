@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./css/App.css";
 import Checkout from "./Checkout";
-import Completion from "./components/Completion";
+import Status from "./components/Status";
 import Navbar from "./components/Navbar";
 
 import { Routes, Route } from "react-router-dom";
@@ -35,7 +35,6 @@ const App = () => {
               element={
                 <Checkout
                   publishableKey={publishableKey}
-                  config={config}
                   appearance={
                     config &&
                     config.appearanceElement &&
@@ -45,7 +44,7 @@ const App = () => {
                 />
               }
             />
-            <Route path="/completion" element={<Completion />} />
+            <Route path="/status" element={<Status />} />
           </Routes>
         </>
       )}

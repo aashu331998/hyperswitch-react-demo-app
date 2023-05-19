@@ -23,21 +23,21 @@ const PayButton = ({ disabled, isProcessing }) => {
 };
 const CheckoutForm = ({ return_url, background, options }) => {
   const stripe = useStripe();
-  const widgets = useElements();
+  const elements = useElements();
 
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!stripe || !widgets) {
+    if (!stripe || !elements) {
       // stripe-js has not yet loaded.
       // Make sure to disable form submission until stripe-js has loaded.
       return;
     }
     setIsLoading(true);
     const { error } = await stripe.confirmPayment({
-      widgets,
+      elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
         return_url: return_url,
@@ -69,7 +69,7 @@ const CheckoutForm = ({ return_url, background, options }) => {
     >
       <PaymentElement id="unified-checkout" options={options} />
       <PayButton
-        disabled={isLoading || !stripe || !widgets}
+        disabled={isLoading || !stripe || !elements}
         isProcessing={isLoading}
       />
       {/* Show any error or success messages */}
