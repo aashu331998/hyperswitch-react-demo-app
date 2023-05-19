@@ -21,23 +21,22 @@ const PayButton = ({ disabled, isProcessing }) => {
     </button>
   );
 };
-const CheckoutForm = ({ return_url, background }) => {
-  const hyper = useStripe();
+const CheckoutForm = ({ return_url, background, options }) => {
+  const stripe = useStripe();
   const widgets = useElements();
 
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  let unifiedCheckoutOptions = {};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!hyper || !widgets) {
-      // hyper-js has not yet loaded.
-      // Make sure to disable form submission until hyper-js has loaded.
+    if (!stripe || !widgets) {
+      // stripe-js has not yet loaded.
+      // Make sure to disable form submission until stripe-js has loaded.
       return;
     }
     setIsLoading(true);
-    const { error } = await hyper.confirmPayment({
+    const { error } = await stripe.confirmPayment({
       widgets,
       confirmParams: {
         // Make sure to change this to your payment completion page
@@ -68,9 +67,9 @@ const CheckoutForm = ({ return_url, background }) => {
       }}
       onSubmit={handleSubmit}
     >
-      <PaymentElement id="unified-checkout" options={unifiedCheckoutOptions} />
+      <PaymentElement id="unified-checkout" options={options} />
       <PayButton
-        disabled={isLoading || !hyper || !widgets}
+        disabled={isLoading || !stripe || !widgets}
         isProcessing={isLoading}
       />
       {/* Show any error or success messages */}

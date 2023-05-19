@@ -4,18 +4,30 @@ const { resolve } = require("path");
 
 // Replace if using a different env file or config
 const env = require("dotenv").config({ path: "./.env" });
-app.use(express.static("./public"));
+app.use(express.static(process.env.STATIC_DIR));
 app.get("/", (req, res) => {
-  const path = resolve("./public" + "/index.html");
+  const path = resolve(process.env.STATIC_DIR + "/index.html");
   res.sendFile(path);
 });
 
-// replace the test api key with your hyperswitch api key
-const hyper = require("stripe")("sk_test_tR3PYbcVNZZ796tH88S4VQ2u");
+const stripe = require("stripe")(process.env.SECRET_KEY);
 
+app.get("/config", (req, res) => {
+  try {
+    res.send({
+      publishableKey: process.env.PUBLISHABLE_KEY,
+    });
+  } catch (err) {
+    return res.status(400).send({
+      error: {
+        message: err.message,
+      },
+    });
+  }
+});
 app.post("/create-payment", async (req, res) => {
   try {
-    const paymentIntent = await hyper.paymentIntents.create({
+    const paymentIntent = await stripe.paymentIntents.create({
       currency: "USD",
       amount: 369999,
     });
