@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
   const [publishableKey, setPublishableKey] = useState(null);
   const [config, setConfig] = useState(null);
+  let returnUrl = `${window.location.origin}/status`;
 
   const fetchCall = async () => {
     let response = await fetch("/config");
@@ -35,12 +36,21 @@ const App = () => {
               element={
                 <Checkout
                   publishableKey={publishableKey}
+                  return_url={returnUrl}
                   appearance={
                     config &&
                     config.appearanceElement &&
                     config.appearanceElement.appearance
                   }
-                  options={config && config.paymentElement}
+                  options={
+                    config && {
+                      ...config.paymentElement,
+                      wallets: {
+                        walletReturnUrl: returnUrl,
+                        //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+                      },
+                    }
+                  }
                 />
               }
             />

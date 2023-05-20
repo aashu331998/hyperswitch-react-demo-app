@@ -4,7 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import CheckoutWrapper from "./components/CheckoutWrapper";
 
-const Checkout = ({ publishableKey, appearance, options }) => {
+const Checkout = ({ publishableKey, appearance, options, return_url }) => {
   const stripePromise = loadStripe(publishableKey);
   const [clientSecret, setClientSecret] = useState("");
 
@@ -30,7 +30,7 @@ const Checkout = ({ publishableKey, appearance, options }) => {
             stripe={stripePromise}
           >
             <CheckoutForm
-              return_url={`${window.location.origin}/status`}
+              return_url={return_url}
               background={"#13151B"}
               options={options || {}}
             />
