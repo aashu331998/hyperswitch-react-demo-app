@@ -6,7 +6,9 @@ function Navbar() {
   return (
     <div className="Navbar">
       <div className="img" href="/">
-        <img src={logo} alt="" width="150" />
+        <a href={`${window.location.origin}`}>
+          <img src={logo} alt="" width="150" />
+        </a>
       </div>
       <div style={{ display: "flex" }}>
         <div className="img" href="/" style={{ marginRight: 20 }}>
