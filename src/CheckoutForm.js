@@ -17,7 +17,7 @@ const PayButton = ({ disabled, isProcessing }) => {
         letterSpacing: 0.9,
       }}
     >
-      <span>{isProcessing ? "Processing ... " : "Pay $3699.99"}</span>
+      <span>{isProcessing ? "Processing ... " : "Pay $2500.00"}</span>
     </button>
   );
 };

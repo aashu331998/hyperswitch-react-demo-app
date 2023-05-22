@@ -29,7 +29,7 @@ app.post("/create-payment", async (req, res) => {
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       currency: "USD",
-      amount: 369999,
+      amount: 250000,
       confirm: false,
       capture_method: "automatic",
       authentication_type: "no_three_ds",

@@ -1,4 +1,4 @@
-import demoApp from "../utils/icons/demoApp.svg";
+import demoApp from "../utils/icons/FrameHS2.svg";
 // import image1 from "../utils/icons/mac.svg";
 // import image2 from "../utils/icons/pad.svg";
 // import image3 from "../utils/icons/iphone.svg";
