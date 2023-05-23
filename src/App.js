@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
   const [publishableKey, setPublishableKey] = useState(null);
   const [config, setConfig] = useState(null);
+  const [key, setKey] = useState(false);
   let returnUrl = `${window.location.origin}/status`;
 
   const fetchCall = async () => {
@@ -21,6 +22,7 @@ const App = () => {
     );
     let { config } = await configResponse.json();
     config && setConfig(JSON.parse(config));
+    await setKey(true);
   };
   useEffect(() => {
     fetchCall();
@@ -31,7 +33,7 @@ const App = () => {
   );
   return (
     <>
-      {publishableKey && (
+      {publishableKey && key && (
         <>
           <Navbar />
           <Routes>
