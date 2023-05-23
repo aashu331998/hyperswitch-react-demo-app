@@ -26,6 +26,24 @@ const Checkout = ({ publishableKey, appearance, options, return_url }) => {
             options={{
               clientSecret,
               appearance: appearance || {},
+              fonts: [
+                {
+                  cssSrc: "https://fonts.googleapis.com/css2?family=Combo&display=swap",
+                },
+                {
+                  cssSrc:
+                    "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap",
+                },
+                {
+                  cssSrc:
+                    "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Qwitcher+Grypen:wght@400;700&display=swap",
+                },
+                {
+                  family: "something",
+                  src: "https://fonts.gstatic.com/s/combo/v21/BXRlvF3Jh_fIhj0lDO5Q82f1.woff2",
+                  weight: "700",
+                },
+              ]
             }}
             stripe={stripePromise}
           >
