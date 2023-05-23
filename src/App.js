@@ -25,6 +25,10 @@ const App = () => {
   useEffect(() => {
     fetchCall();
   }, []);
+  console.log(
+    "test",
+    config && config.appearanceElement && config.appearanceElement.appearance
+  );
   return (
     <>
       {publishableKey && (
