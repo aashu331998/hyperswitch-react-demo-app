@@ -20,7 +20,7 @@ export default function CheckoutForm() {
 
     setIsProcessing(true);
 
-    const { error } = await hyper.confirmPayment({
+    const resMsg = await hyper.confirmPayment({
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
@@ -28,8 +28,10 @@ export default function CheckoutForm() {
       },
     });
 
-    if (error.type === "card_error" || error.type === "validation_error") {
-      setMessage(error.message);
+    
+
+    if (resMsg.error !== null) {
+      setMessage(resMsg.error);
     } else {
       setMessage("An unexpected error occured.");
     }
