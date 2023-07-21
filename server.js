@@ -1,5 +1,7 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
+app.use(cors());
 const { resolve } = require("path");
 
 // Replace if using a different env file or config
