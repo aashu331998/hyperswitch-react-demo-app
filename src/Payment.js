@@ -9,14 +9,14 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("/config").then(async (r) => {
+    fetch(window.location.href.replace("4242","5252")+"config").then(async (r) => {
       const { publishableKey } = await r.json();
       setHyperPromise(loadHyper(publishableKey));
     });
   }, []);
 
   useEffect(() => {
-    fetch("/create-payment-intent", {
+    fetch(window.location.href.replace("4242","5252")+"create-payment-intent", {
       method: "POST",
       body: JSON.stringify({}),
     }).then(async (result) => {
