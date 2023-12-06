@@ -26,14 +26,18 @@ function Payment() {
   }, []);
 
   return (
-    <>
+    <div
+      style={{
+        width: "480px",
+      }}
+    >
       <h2>Hyperswitch Unified Checkout</h2>
       {clientSecret && hyperPromise && (
         <HyperElements hyper={hyperPromise} options={{ clientSecret }}>
           <CheckoutForm />
         </HyperElements>
       )}
-    </>
+    </div>
   );
 }
 

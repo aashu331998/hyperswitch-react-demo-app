@@ -1,7 +1,5 @@
-import "./App.css";
 import Payment from "./Payment";
 import Completion from "./Completion";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
